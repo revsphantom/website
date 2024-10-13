@@ -1,0 +1,327 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Press+Start+2P&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+/* #F71735 #EFF1F3 #EBEBEB #FFA500 #121619 #00FF00*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    font-family: "Roboto" monospace;
+    color: #EBEBEB;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* background */
+.background-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    background-image: url(/assets/images/background.gif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-blend-mode: overlay;
+    z-index: -1;
+    will-change: transform;
+}
+
+/* header */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 10000;
+}
+
+.header-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    height: 100%;
+}
+
+.site-title {
+    font-family: "Press Start 2P";
+    font-size: 36px;
+    opacity: 0;
+    z-index: 100000;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.site-title a {
+    color: #ffa500;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    transition: color 0.3s ease;
+}
+
+.site-title a:hover {
+    color: #0000ff;
+}
+
+/* desk menu */
+.desktop-menu {
+    position: absolute;
+    right: 20px;
+}
+
+.desktop-menu ul {
+    list-style-type: none;
+    display: flex;
+}
+
+.desktop-menu li {
+    margin-left: 20px;
+}
+
+.desktop-menu a {
+    color: #EBEBEB;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.desktop-menu a:hover {
+    color: #ffa500;
+}
+
+/* ham burger */
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+    z-index: 1002;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 35px;
+    height: 25px;
+}
+
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 3px;
+    background-color: #EBEBEB;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.hamburger-menu.change .bar1 {
+    transform: rotate(-45deg) translate(-7px, 6px);
+}
+
+.hamburger-menu.change .bar2 {
+    opacity: 0;
+}
+
+.hamburger-menu.change .bar3 {
+    transform: rotate(45deg) translate(-7px, -6px);
+}
+
+/* mobile menu */
+.mobile-menu {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 100vw;
+    height: calc(100vh - 80px);
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 10;
+    transform: translateY(-100%);
+    transition: transform 0.4s ease-in-out;
+    visibility: hidden;
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-menu ul {
+    list-style-type: none;
+    padding: 20px;
+    text-align: center;
+}
+
+.mobile-menu li {
+    margin: 5px 0;
+}
+
+.mobile-menu a {
+    color: #EBEBEB;
+    text-decoration: none;
+    font-size: 24px;
+    transition: color 0.4s ease;
+}
+
+.mobile-menu a:hover {
+    color: #ffa500;
+}
+
+/* main */
+main {
+    margin-top: 80px;
+    flex-grow: 1;
+}
+
+section {
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px;
+}
+
+.main-title {
+    font-family: "Press Start 2P";
+    text-align: center;
+    font-size: 36px;
+    color: #ffa500;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+    position: relative;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.content {
+    text-align: center;
+}
+
+h2 {
+    font-size: 24px;
+    font-family: "Pixelify Sans";
+    color: #00ff00;
+    margin-bottom: 2px;
+}
+
+p {
+    font-size: 18px;
+    color: #EBEBEB;
+    max-width: 600px;
+    text-align: left;
+}
+
+/* about */
+.about-image {
+    width: 70%;
+    max-width: 620px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.about-content {
+    max-width: 600px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border: 5px solid #121619;
+    padding: 10px;
+}
+
+.contact-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-family: "Pixelify Sans";
+    font-size: 26px;
+    text-decoration: none;
+    color: #EBEBEB;
+    background-color: #ffa500;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.contact-button:hover {
+    background-color: #0000ff;
+    transform: translateY(-2px);
+}
+
+.contact-button:active {
+    transform: translateY(0);
+}
+
+/* footer */
+footer {
+    padding: 10px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    z-index: 10001;
+}
+
+.github-button,
+.htb-button,
+.thm-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border-radius: 50%;
+    padding: 5px;
+    margin: 0 20px;
+    width: 58px;
+    height: 40px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.github-button i,
+.htb-button i,
+.thm-button i {
+    font-size: 48px;
+    color: #808080;
+    transition: color 0.3s ease;
+}
+
+.htb-button:hover i { color: #9fef00; }
+.github-button:hover i { color: #ffa500; }
+.thm-button:hover i { color: #c11111; }
+
+/* resizing */
+@media (max-width: 900px) {
+    .desktop-menu { display: none; }
+    .hamburger-menu { display: block; }
+    .mobile-menu { display: block; }
+    .main-title, .site-title { font-size: 22px; }
+    h2 { font-size: 20px; }
+    p { font-size: 16px; }
+    .site-title {
+        position: absolute;
+        left: 20px;
+        transform: translate(0, 0);
+    }
+}
+
+@media (min-width: 901px) {
+    .site-title {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+}
